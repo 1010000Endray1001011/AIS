@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainPlate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #999999;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kitisgang.aisgasstation.Controller.mainMenuController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="831.0" style="-fx-background-color: #99CC66;">
+        <menus>
+          <Menu mnemonicParsing="false" text="Закрыть смену">
+              <items>
+                  <MenuItem fx:id="ButtonCloseWorkShift" mnemonicParsing="false" text="Закрыть личную смену" />
+              </items>
+          </Menu>
+
+          <Menu  mnemonicParsing="false" text="Справка" >
+              <items>
+              <MenuItem fx:id="ButtonHelp" mnemonicParsing="false" text="Помощь" />
+              </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Менеджмент">
+              <items>
+                  <Menu mnemonicParsing="false" text="Удалить сотрудника">
+                    <items>
+                      <MenuItem fx:id="ButtonDeleteEmpoyee" mnemonicParsing="false" text="Продавец" />
+                        <MenuItem fx:id="ButtonDeleteManager" mnemonicParsing="false" text="Менеджер" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Регистрация сотрудника">
+                    <items>
+                        <MenuItem fx:id="ButtonRegisterEmployee" mnemonicParsing="false" text="Продавец" />
+                      <MenuItem fx:id="ButtonRegisterManager" mnemonicParsing="false" text="Менеджер" />
+                    </items>
+                  </Menu>
+                  <MenuItem fx:id="ButtonChangeGasStation" mnemonicParsing="false" text="Сменить АЗС" />
+                  <MenuItem fx:id="ButtonShowSales" mnemonicParsing="false" text="Продажи" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="LabelStatus" layoutX="824.0" layoutY="2.0" prefHeight="25.0" prefWidth="176.0" style="-fx-background-color: #99CC66;" text="Статус:" />
+      <TabPane layoutY="27.0" prefHeight="625.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Заявки">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="670.0" layoutY="-4.0" prefHeight="604.0" prefWidth="330.0" style="-fx-background-color: #666666;">
+                           <children>
+                              <Button fx:id="ButtonSignInKlient" layoutX="5.0" layoutY="242.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: #888888;" text="Зарегистрировать клиента" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ButtonLogInKlient" layoutX="5.0" layoutY="181.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: #888888;" text="Авторизовать клиента" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="LabelNameKlient" layoutX="11.0" layoutY="60.0" prefHeight="25.0" prefWidth="308.0" text="Имя:" textFill="WHITE">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="53.0" prefWidth="330.0" style="-fx-background-color: #777777;" text="              Клиент" textAlignment="CENTER" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelBonusKlient" layoutX="11.0" layoutY="136.0" prefHeight="25.0" prefWidth="308.0" text="Баланс бонусов:" textFill="WHITE">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelNumberKlient" layoutX="11.0" layoutY="98.0" prefHeight="25.0" prefWidth="308.0" text="Телефон:" textFill="WHITE">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutY="362.0" prefHeight="53.0" prefWidth="330.0" style="-fx-background-color: #777777;" text="              Заявка" textAlignment="CENTER" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="ButtonOrderComplete" layoutX="5.0" layoutY="426.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: #888888;" text="Выполнить" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ButtonOrderDelete" layoutX="5.0" layoutY="483.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: #888888;" text="Удалить" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ButtonRedactOrder" layoutX="5.0" layoutY="540.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: #888888;" text="Редактировать" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ButtonWriteOffBonusKlient" layoutX="5.0" layoutY="302.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: #888888;" text="Списать бонусы" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                        <ListView fx:id="ListViewOrders" layoutX="14.0" layoutY="14.0" prefHeight="388.0" prefWidth="647.0" style="-fx-background-color: #666666; -fx-border-color: #000000; -fx-border-width: 3;" />
+                        <AnchorPane layoutX="14.0" layoutY="416.0" prefHeight="166.0" prefWidth="647.0" style="-fx-background-color: #666666;">
+                           <children>
+                              <TextField fx:id="TextFieldQuantityProduct" layoutX="156.0" layoutY="58.0" prefHeight="25.0" prefWidth="127.0" />
+                              <Button fx:id="ButtonAddOrder" layoutX="173.0" layoutY="109.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="113.0" style="-fx-background-color: #888888;" text="Добавить" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <SplitMenuButton fx:id="SplitMenuProduct" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="272.0" text="Товар" />
+                              <Line endX="-100.0" endY="93.0" layoutX="400.0" layoutY="71.0" startX="-100.0" startY="-70.0" />
+                              <Label fx:id="LabelGeneralCost" layoutX="365.0" layoutY="58.0" prefHeight="81.0" prefWidth="214.0" text="   0 Рублей" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="61.0" text="Количество (л/шт)" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelOrderCost" layoutX="14.0" layoutY="99.0" text="Цена: 0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="357.0" layoutY="416.0" prefHeight="53.0" prefWidth="287.0" text="Итоговая сумма:" textAlignment="CENTER" textFill="#99cc66">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Продукция">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="670.0" layoutY="-4.0" prefHeight="604.0" prefWidth="330.0" style="-fx-background-color: #666666;">
+                           <children>
+                              <Label layoutY="3.0" prefHeight="53.0" prefWidth="330.0" style="-fx-background-color: #777777;" text=" Топливо общ. кол-во" textAlignment="CENTER" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelGereralQuantityAI92" layoutX="11.0" layoutY="67.0" prefHeight="25.0" prefWidth="308.0" text="АИ-92: " textFill="WHITE">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelGereralQuantityAI95" layoutX="11.0" layoutY="107.0" prefHeight="25.0" prefWidth="308.0" text="АИ-95: " textFill="WHITE">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelGereralQuantityAI98" layoutX="11.0" layoutY="147.0" prefHeight="25.0" prefWidth="308.0" text="АИ-98: " textFill="WHITE">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelGereralQuantityDP" layoutX="11.0" layoutY="187.0" prefHeight="25.0" prefWidth="308.0" text="ДТ: " textFill="WHITE">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1.0" layoutY="239.0" prefHeight="53.0" prefWidth="333.0" style="-fx-background-color: #777777;" text="           На складе " textAlignment="CENTER" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelInventorylQuantityAI92" layoutX="11.0" layoutY="302.0" prefHeight="25.0" prefWidth="308.0" text="АИ-92: " textFill="WHITE">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelInventorylQuantityAI95" layoutX="11.0" layoutY="342.0" prefHeight="25.0" prefWidth="308.0" text="АИ-95: " textFill="WHITE">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelInventorylQuantityAI98" layoutX="11.0" layoutY="382.0" prefHeight="25.0" prefWidth="308.0" text="АИ-98: " textFill="WHITE">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LabelInventorylQuantityDP" layoutX="11.0" layoutY="422.0" prefHeight="25.0" prefWidth="308.0" text="ДТ: " textFill="WHITE">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="ButtonShowAdditionalProduct" layoutX="22.0" layoutY="476.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="291.0" style="-fx-background-color: #888888;" text="Показать допольнительную продукцию" textFill="#99cc66">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="ButtonDeleteFuelPump" layoutX="14.0" layoutY="504.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="320.0" style="-fx-background-color: #777777;" text="Удалить бензоколонку" textFill="#99cc66" onAction="#deleteFuelPump">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="ButtonAddFuelPump" layoutX="340.0" layoutY="504.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="320.0" style="-fx-background-color: #777777;" text="Добавить бензоколонку" textFill="#99cc66" onAction="#addFuelPump">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="ButtomDistributeInventory" layoutX="14.0" layoutY="416.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="646.0" style="-fx-background-color: #777777;" text="Распределить со склада" textFill="#99cc66">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Button>
+                        <ListView fx:id="ListViewProduct" layoutX="17.0" layoutY="14.0" prefHeight="388.0" prefWidth="647.0" style="-fx-background-color: #666666; -fx-border-color: #000000; -fx-border-width: 3;" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Поставки">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="ListViewSupply" layoutX="13.0" layoutY="14.0" prefHeight="389.0" prefWidth="975.0" style="-fx-background-color: #666666; -fx-border-width: 3; -fx-border-color: #000000;" />
+                        <Button fx:id="ButtonOrderSupply" layoutX="13.0" layoutY="504.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="485.0" style="-fx-background-color: #777777;" text="Заказать поставку" textFill="#99cc66">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="ButtonOnloadSupply" layoutX="501.0" layoutY="504.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="485.0" style="-fx-background-color: #777777;" text="Отгрузить поставку" textFill="#99cc66">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="ButtomRedactSupply" layoutX="13.0" layoutY="419.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="970.0" style="-fx-background-color: #777777;" text="Изменить статус поставки" textFill="#99cc66">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

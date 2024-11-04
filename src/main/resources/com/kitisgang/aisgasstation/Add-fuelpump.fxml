@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/22.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.kitisgang.aisgasstation.Controller.addFuelPumpController"
+      spacing="10">
+<padding>
+    <Insets top="10" right="10" bottom="10" left="10"/>
+</padding>
+
+<GridPane hgap="10" vgap="10">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES"/>
+        <ColumnConstraints hgrow="SOMETIMES"/>
+    </columnConstraints>
+
+    <Label text="ID топлива:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="fuelIdField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+    <Label text="Статус:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <CheckBox fx:id="statusCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Количество топлива:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="quantityField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+</GridPane>
+
+<HBox spacing="10" alignment="CENTER_RIGHT">
+    <Button text="Отмена" onAction="#handleCancel"/>
+    <Button text="Сохранить" onAction="#saveHandle"/>
+</HBox>
+</VBox>
