@@ -7,32 +7,54 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
 <VBox xmlns="http://javafx.com/javafx/22.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
+      style="-fx-background-color:#99cc66"
       fx:controller="com.kitisgang.aisgasstation.Controller.addFuelPumpController"
       spacing="10">
 <padding>
     <Insets top="10" right="10" bottom="10" left="10"/>
 </padding>
 
-<GridPane hgap="10" vgap="10">
+<GridPane hgap="10" vgap="10" style="-fx-background-color:#99cc66">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES"/>
         <ColumnConstraints hgrow="SOMETIMES"/>
     </columnConstraints>
 
-    <Label text="ID топлива:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label text="ID топлива:" GridPane.columnIndex="0"  GridPane.rowIndex="0">
+        <font>
+            <Font name="System Bold" size="18.0"/>
+        </font>
+    </Label>
     <TextField fx:id="fuelIdField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
-    <Label text="Статус:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Label text="Статус:" GridPane.columnIndex="0"  GridPane.rowIndex="1">
+        <font>
+            <Font name="System Bold" size="18.0"/>
+        </font>
+    </Label>
     <CheckBox fx:id="statusCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-    <Label text="Количество топлива:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label text="Количество топлива:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <font>
+            <Font name="System Bold" size="15.0"/>
+        </font>
+    </Label>
     <TextField fx:id="quantityField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 </GridPane>
 
-<HBox spacing="10" alignment="CENTER_RIGHT">
-    <Button text="Отмена" onAction="#handleCancel"/>
-    <Button text="Сохранить" onAction="#saveHandle"/>
+<HBox spacing="10" alignment="CENTER">
+    <Button text="Отмена" onAction="#handleCancel" style="-fx-background-color: #888888;" textFill="#99cc66">
+        <font>
+            <Font size="14" name="System Bold"/>
+        </font>
+    </Button>
+    <Button text="Сохранить" onAction="#saveHandle" style="-fx-background-color: #888888;" textFill="#99cc66">
+        <font>
+            <Font size="14" name="System Bold"/>
+        </font>
+    </Button>
 </HBox>
 </VBox>

@@ -3,6 +3,7 @@ package com.kitisgang.aisgasstation.Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import com.kitisgang.aisgasstation.dbHandler;
@@ -16,6 +17,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -182,6 +185,8 @@ public class mainMenuController {
                 throw new RuntimeException(e);
             }
         }
+        showFuelPump();
+        updateFuelTotals();
     }
 
     @FXML
@@ -202,15 +207,54 @@ public class mainMenuController {
         stage.show();
     }
 
+    public void showOptinalProducts() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        URL fxmlUrl = getClass().getResource("/com/kitisgang/aisgasstation/Optional-products.fxml");
+        loader.setLocation(fxmlUrl);
+        Parent root = loader.load();
+
+        Stage stage = new Stage();
+        stage.setTitle("Дополнительная продукция");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root,550,400));
+
+
+        optionalProductsController controller = loader.getController();
+        stage.show();
+    }
+    public void updateFuelTotals() {
+        try {
+            Map<String, Double> totals = db.getTotalFuelQuantities();
+
+            LabelGereralQuantityAI92.setText("АИ-92: " +
+                    String.format("%.2f л", totals.getOrDefault("АИ-92", 0.0)));
+
+            LabelGereralQuantityAI95.setText("АИ-95: " +
+                    String.format("%.2f л", totals.getOrDefault("АИ-95", 0.0)));
+
+            LabelGereralQuantityAI98.setText("АИ-98: " +
+                    String.format("%.2f л", totals.getOrDefault("АИ-98", 0.0)));
+
+            LabelGereralQuantityDP.setText("ДТ: " +
+                    String.format("%.2f л", totals.getOrDefault("ДТ", 0.0)));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка");
+            alert.setContentText("Ошибка при получении данных о количестве топлива: " + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+
+
 
     @FXML
     void initialize() {
-
         //продукция(бенз\колонки)
         showFuelPump();
-
-
-
+        updateFuelTotals();
     }
 
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx/22.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="10"
+      style="-fx-background-color:#99cc66"
+      fx:controller="com.kitisgang.aisgasstation.Controller.optionalProductsController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    
+    <ListView fx:id="listViewOptionalProducts" VBox.vgrow="ALWAYS" style="-fx-background-color:#666666"/>
+
+    <Button fx:id="okButton" text="OK" maxWidth="Infinity" onAction="#handleCancel" style="-fx-background-color: #888888;" textFill="#99cc66">
+        <font>
+            <Font size="15" name="System Bold"/>
+        </font>
+    </Button>
+
+</VBox>

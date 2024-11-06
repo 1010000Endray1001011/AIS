@@ -37,6 +37,7 @@ public class addFuelPumpController {
         db.addFuelPump(newPump);
         mainController.showFuelPump();
         closeWindow();
+        mainController.updateFuelTotals();
     }
     @FXML
     private void handleCancel() {

@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
+<?import org.controlsfx.dialog.FontSelectorDialog.FontPanel?>
 <AnchorPane fx:id="mainPlate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #999999;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kitisgang.aisgasstation.Controller.mainMenuController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="831.0" style="-fx-background-color: #99CC66;">
@@ -107,7 +107,7 @@
                                  </font>
                               </Button>
                            </children></AnchorPane>
-                        <ListView fx:id="ListViewOrders" layoutX="14.0" layoutY="14.0" prefHeight="388.0" prefWidth="647.0" style="-fx-background-color: #666666; -fx-border-color: #000000; -fx-border-width: 3;" />
+                         <ListView fx:id="ListViewOrders" layoutX="14.0" layoutY="14.0" prefHeight="388.0" prefWidth="647.0" style="-fx-background-color: #666666; -fx-border-color: #000000; -fx-border-width: 3;"/>
                         <AnchorPane layoutX="14.0" layoutY="416.0" prefHeight="166.0" prefWidth="647.0" style="-fx-background-color: #666666;">
                            <children>
                               <TextField fx:id="TextFieldQuantityProduct" layoutX="156.0" layoutY="58.0" prefHeight="25.0" prefWidth="127.0" />
@@ -200,7 +200,7 @@
                                     <Font size="28.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="ButtonShowAdditionalProduct" layoutX="22.0" layoutY="476.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="291.0" style="-fx-background-color: #888888;" text="Показать допольнительную продукцию" textFill="#99cc66">
+                              <Button fx:id="ButtonShowAdditionalProduct" layoutX="22.0" layoutY="476.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="291.0" style="-fx-background-color: #888888;" text="Показать допольнительную продукцию" textFill="#99cc66" onAction="#showOptinalProducts">
                                  <font>
                                     <Font name="System Bold" size="13.0" />
                                  </font>
